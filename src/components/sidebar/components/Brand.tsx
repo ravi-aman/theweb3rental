@@ -11,7 +11,8 @@ export function SidebarBrand() {
 
 	return (
 		<Flex alignItems='center' flexDirection='column'>
-			<HorizonLogo h='26px' w='175px' my='32px' color={logoColor} />
+			{/* <HorizonLogo h='26px' w='175px' my='32px' color={logoColor} /> */}
+			<h1 className='my-12 font-bold '>Amango</h1>
 			<HSeparator mb='20px' />
 		</Flex>
 	);
