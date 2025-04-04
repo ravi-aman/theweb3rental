@@ -44,7 +44,7 @@ export default function Default() {
   // Chakra Color Mode
   const brandColor = useColorModeValue('brand.500', 'white');
   const boxBg = useColorModeValue('secondaryGray.300', 'whiteAlpha.100');
-  const WS_URL = useGrokUrl();
+  // const WS_URL = useGrokUrl();
   const successColor = useColorModeValue('green.500', 'green.400');
   const warningColor = useColorModeValue('yellow.500', 'yellow.400');
   const errorColor = useColorModeValue('red.500', 'red.400');
@@ -72,7 +72,7 @@ export default function Default() {
 
   // Function to connect to WebSocket
   const connectWebSocket = () => {
-    const ws = new WebSocket("https://497d-103-76-139-145.ngrok-free.app");
+    const ws = new WebSocket("wss://497d-103-76-139-145.ngrok-free.app");
     wsRef.current = ws;
 
     ws.onopen = () => {
