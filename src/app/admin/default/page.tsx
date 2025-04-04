@@ -72,7 +72,7 @@ export default function Default() {
 
   // Function to connect to WebSocket
   const connectWebSocket = () => {
-    const ws = new WebSocket(WS_URL);
+    const ws = new WebSocket("https://497d-103-76-139-145.ngrok-free.app");
     wsRef.current = ws;
 
     ws.onopen = () => {
