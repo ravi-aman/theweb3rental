@@ -1,5 +1,6 @@
 'use client';
 import useGrokUrl from 'utils/getGrokUrl';
+import { io } from "socket.io-client";
 
 import React, { useEffect, useRef, useState } from 'react';
 import {
@@ -70,9 +71,12 @@ export default function Default() {
   });
   const wsRef = useRef(null);
 
+
+  // const { grokUrl } = useGrokUrl();
+  const grokUrl = "wss://c82d-2409-4050-2e49-3cbe-e109-b45b-c5a2-8337.ngrok-free.app";
   // Function to connect to WebSocket
-  const connectWebSocket = () => {
-    const ws = new WebSocket('wss://497d-103-76-139-145.ngrok-free.app');
+  const connectWebSocket = React.useCallback(() => {
+    const ws = new WebSocket(`${grokUrl}/socket.io/?EIO=4&transport=websocket`);
     wsRef.current = ws;
 
     ws.onopen = () => {
@@ -84,18 +88,25 @@ export default function Default() {
     };
 
     ws.onmessage = (event) => {
-      const data = JSON.parse(event.data);
+      try {
 
-      // Handle system_info updates
-      if (data.system_info) {
-        setSystemInfo(data.system_info);
-        console.log('Received system info:', data.system_info);
-      }
+        console.log('Received message:', event);
+        // const data = JSON.parse(event.data);
 
-      // Handle usage_stats updates
-      if (data.usage_stats) {
-        setUsageStats(data.usage_stats);
-        console.log('Received usage stats:', data.usage_stats);
+        // // Handle system_info updates
+        // if (data.system_info) {
+        //   setSystemInfo(data.system_info);
+        //   console.log('Received system info:', data.system_info);
+        // }
+
+        // // Handle usage_stats updates
+        // if (data.usage_stats) {
+        //   setUsageStats(data.usage_stats);
+        //   console.log('Received usage stats:', data.usage_stats);
+        // }
+      } catch (error) {
+        console.log('Failed to parse WebSocket message:', error);
+        console.log('Received data:', event.data);
       }
     };
 
@@ -110,7 +121,7 @@ export default function Default() {
       console.error('WebSocket error:', error);
       ws.close();
     };
-  };
+  }, []);
 
   // Establish WebSocket connection
   useEffect(() => {
@@ -118,7 +129,7 @@ export default function Default() {
     return () => {
       if (wsRef.current) wsRef.current.close();
     };
-  }, []);
+  }, [connectWebSocket]);
 
   // Helper function to determine color based on usage percentage
   const getUsageColor = (usage: number) => {

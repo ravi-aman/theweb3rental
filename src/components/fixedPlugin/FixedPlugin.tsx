@@ -10,12 +10,12 @@ export default function FixedPlugin (props: { [x: string]: any }) {
   const { colorMode, toggleColorMode } = useColorMode()
   let bgButton = 'linear-gradient(135deg, #868CFF 0%, #4318FF 100%)'
 
-  let left = ''
-  let right = '35px'
+  const left = React.useRef('')
+  const right = React.useRef('35px')
   useEffect(() => {
     if (isWindowAvailable() || window.document.documentElement.dir !== 'rtl')
       return
-    ;[left, right] = [right, left]
+    ;[left.current, right.current] = [right.current, left.current]
   })
 
   return (
@@ -27,8 +27,8 @@ export default function FixedPlugin (props: { [x: string]: any }) {
       zIndex='99'
       position='fixed'
       variant='no-effects'
-      left={left}
-      right={right}
+      left={left.current}
+      right={right.current}
       bottom='30px'
       border='1px solid'
       borderColor='#6A53FF'

@@ -168,7 +168,9 @@ def run_docker_container(image, resource_limits, container_name=None):
             device_requests=device_requests,
             mem_limit=memory_limit,
             cpu_period=cpu_period,
-            cpu_quota=cpu_quota
+            cpu_quota=cpu_quota,
+            stdin_open=True,       # Keep STDIN open (important for interactive mode)
+            tty=True,
         )
         
         # Get container info
