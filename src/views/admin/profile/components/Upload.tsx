@@ -25,7 +25,7 @@ export default function Upload(props: { used?: number; total?: number; [x: strin
 							<Icon as={MdUpload} w='80px' h='80px' color={brandColor} />
 							<Flex justify='center' mx='auto' mb='12px'>
 								<Text fontSize='xl' fontWeight='700' color={brandColor}>
-									Upload Files
+									Download Package
 								</Text>
 							</Flex>
 							<Text fontSize='sm' fontWeight='500' color='secondaryGray.500'>
@@ -41,7 +41,7 @@ export default function Upload(props: { used?: number; total?: number; [x: strin
 						textAlign='start'
 						fontSize='2xl'
 						mt={{ base: '20px', '2xl': '50px' }}>
-						Complete your profile
+						Download System Scanner
 					</Text>
 					<Text
 						color={textColorSecondary}
@@ -49,8 +49,7 @@ export default function Upload(props: { used?: number; total?: number; [x: strin
 						my={{ base: 'auto', '2xl': '10px' }}
 						mx='auto'
 						textAlign='start'>
-						Stay on the pulse of distributed projects with an anline whiteboard to plan, coordinate and
-						discuss
+						Install this package to scan your device
 					</Text>
 					<Flex w='100%'>
 						<Button
@@ -61,7 +60,7 @@ export default function Upload(props: { used?: number; total?: number; [x: strin
 							mt={{ base: '20px', '2xl': 'auto' }}
 							variant='brand'
 							fontWeight='500'>
-							Publish now
+							Download 
 						</Button>
 					</Flex>
 				</Flex>

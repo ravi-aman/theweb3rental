@@ -57,12 +57,12 @@ const routes: IRoute[] = [
     path: '/sign-in',
     icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
   },
-  {
-    name: 'RTL Admin',
-    layout: '/rtl',
-    path: '/rtl-default',
-    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
-  },
+//   {
+//     name: 'RTL Admin',
+//     layout: '/rtl',
+//     path: '/rtl-default',
+//     icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
+//   },
 ];
 
 export default routes;
