@@ -56,7 +56,7 @@ export default function ProfileOverview() {
           gridArea="1 / 1 / 2 / 2"
           banner={banner}
           avatar={avatar}
-          name="Adela Parkson"
+          name="Ravikant"
           job="Product Designer"
           posts="17"
           followers="9.7k"
