@@ -25,20 +25,20 @@ const routes: IRoute[] = [
     path: '/default',
     icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
   },
-  {
-    name: 'NFT Marketplace',
-    layout: '/admin',
-    path: '/nft-marketplace',
-    icon: (
-      <Icon
-        as={MdOutlineShoppingCart}
-        width="20px"
-        height="20px"
-        color="inherit"
-      />
-    ),
-    secondary: true,
-  },
+  // {
+  //   name: 'NFT Marketplace',
+  //   layout: '/admin',
+  //   path: '/nft-marketplace',
+  //   icon: (
+  //     <Icon
+  //       as={MdOutlineShoppingCart}
+  //       width="20px"
+  //       height="20px"
+  //       color="inherit"
+  //     />
+  //   ),
+  //   secondary: true,
+  // },
   {
     name: 'Data Tables',
     layout: '/admin',
