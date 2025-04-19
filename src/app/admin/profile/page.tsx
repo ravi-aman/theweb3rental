@@ -57,15 +57,15 @@ export default function ProfileOverview() {
           banner={banner}
           avatar={avatar}
           name="Ravikant"
-          job="Product Designer"
+          job="[0x1234abcd5678....]"
           posts="17"
           followers="9.7k"
           following="274"
         />
         <Storage
           gridArea={{ base: '2 / 1 / 3 / 2', lg: '1 / 2 / 2 / 3' }}
-          used={25.6}
-          total={50}
+          used={40}
+          total={100}
         />
         <Upload
           gridArea={{
@@ -105,7 +105,7 @@ export default function ProfileOverview() {
           minH="365px"
           pe="20px"
         />
-        <Notifications
+        {/* <Notifications
           used={25.6}
           total={50}
           gridArea={{
@@ -113,7 +113,7 @@ export default function ProfileOverview() {
             lg: '2 / 1 / 3 / 3',
             '2xl': '1 / 3 / 2 / 4',
           }}
-        />
+        /> */}
       </Grid>
     </Box>
   );
